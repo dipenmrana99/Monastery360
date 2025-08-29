@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Losar (Tibetan New Year) Celebrations",
+    "location": "Rumtek Monastery",
+    "date": "2026-02-17T09:00:00",
+    "description": "Prayers, cham dances, and community feasts.",
+    "signup_open": true
+  },
+  {
+    "title": "Vajravarahi Drupchod Ritual",
+    "location": "Rumtek Monastery",
+    "date": "2026-04-10T09:00:00",  
+    "description": "A propitiation ritual to Vajrayogini held annually at Rumtek for seven days.",
+    "signup_open": false
+  },
+  {
+    "title": "Losar Chaam Dance",
+    "location": "Rumtek Monastery",
+    "date": "2026-02-17T09:00:00",
+    "description": "Masked Cham dances performed during Tibetan New Year celebrations.",
+    "signup_open": false
+  },
+  {
+    "title": "Annual Cham Festival",
+    "location": "Pemayangtse Monastery",
+    "date": "2026-02-25T10:00:00",
+    "description": "Annual Cham dance held on the 28th–29th day of the 12th Tibetan month.",
+    "signup_open": false
+  },
+  {
+    "title": "Detor Cham Dance",
+    "location": "Enchey Monastery",
+    "date": "2026-02-05T10:00:00",
+    "description": "Colorful Cham dances held on the 18th–19th of the 12th Tibetan month.",
+    "signup_open": false
+  },
+  {
+    "title": "Pang Lhabsol Festival",
+    "location": "Ralang Monastery",
+    "date": "2026-08-25T10:00:00",
+    "description": "Pang Lhabsol, a warrior dance festival honoring Mt. Khangchendzonga, held annually.",
+    "signup_open": false
+  },
+  {
+    "title": "Chaam Dance Performance",
+    "location": "Phodong Monastery",
+    "date": "2026-11-10T10:00:00",
+    "description": "Chaam performances held on the 28th–29th of the 10th Tibetan month.",
+    "signup_open": false
+  },
+  {
+    "title": "Guru Rinpoche Tshechu",
+    "location": "Pemayangtse Monastery",
+    "date": "2026-07-10T10:00:00",
+    "description": "Monastic rituals and masked dances honoring Padmasambhava.",
+    "signup_open": false
+  }
+]

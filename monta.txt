@@ -1,0 +1,12 @@
+Dubdi Monastery
+Lingdum Monastery
+Phensong Monastery
+Phodong Monastery
+Ralang Monastery
+Kathog Monastery
+Enchey Monastery
+Pemayangtse Monastery
+Rumtek Monastery
+
+
+https://console.dialogflow.com/api-client/demo/embedded/e3febfd3-f76f-4dbd-ba42-42c759438d76

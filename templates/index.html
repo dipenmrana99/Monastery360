@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>Digitize & Showcase Sikkim’s Monasteries</h1>
+    <p>Explore 360° virtual tours, cultural history, and events. Support preservation with community-powered archives.
+    </p>
+    <form action="{{ url_for('monastery_list') }}" method="get" class="search-bar">
+      <input type="text" name="q" placeholder="Search monasteries, districts, keywords…">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+  <div id="monasteryCarousel" class="carousel slide rounded-4 overflow-hidden shadow-sm" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='assets/images/slider/slider1.jpg') }}" class="d-block w-100"
+          alt="Monastery Image 1">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/images/slider/slider2.jpg') }}" class="d-block w-100"
+          alt="Monastery Image 2">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/images/slider/slider3.jpg') }}" class="d-block w-100"
+          alt="Monastery Image 3">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/images/slider/slider4.jpg') }}" class="d-block w-100"
+          alt="Monastery Image 4">
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#monasteryCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#monasteryCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<section>
+  <h2>Featured</h2>
+  <div class="grid">
+    {% for m in featured %}
+    <a class="card" href="{{ url_for('monastery_detail', monastery_id=m.id) }}">
+      <img src="{{ m.image }}" alt="{{ m.name }} image">
+      <div class="card-body">
+        <h3>{{ m.name }}</h3>
+        <p>{{ m.summary }}</p>
+        <div class="chip-row">
+          <span class="chip">{{ m.district }}</span>
+          <span class="chip">{{ m.founded }}</span>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+<script>
+  initMap("homeMap", {{ url_for('api/monasteries')| tojson | safe if false else '\"/api/monasteries.json\"' }}, { zoom: 7 });
+</script>
+{% endblock %}

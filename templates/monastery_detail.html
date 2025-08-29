@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="detail">
+  <div class="detail-hero">
+    <img src="{{ m.image }}" alt="{{ m.name }} image">
+    <div>
+      <h1>{{ m.name }}</h1>
+      <p class="muted">{{ m.district }} · Founded: {{ m.founded }}</p>
+      <div class="btn-row">
+        {% if m.street_view_url %}
+        <a class="btn" href="{{ m.street_view_url }}" target="_blank" rel="noopener">Open Street View</a>
+        {% endif %}
+        <a class="btn outline" href="https://www.google.com/maps/search/?api=1&query={{ m.lat }},{{ m.lng }}" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+      {% if m.audio_guide %}
+      <div class="audio">
+        <p>Audio Guide</p>
+        <audio controls src="{{ m.audio_guide }}"></audio>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <p class="lead">{{ m.summary }}</p>
+  <p>{{ m.description }}</p>
+
+  {% if m.nearby %}
+  <h3>Nearby & Related</h3>
+  <ul class="inline-list">
+    {% for n in m.nearby %}
+    <li>{{ n }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div id="detailMap" style="height: 360px;"></div>
+</article>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+<script>
+initMap("detailMap", {{ url_for('api/monasteries')|tojson|safe if false else '\"/api/monasteries.json\"' }}, {center:[{{ m.lat }}, {{ m.lng }}], zoom:10});
+</script>
+{% endblock %}

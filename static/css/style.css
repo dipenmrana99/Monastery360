@@ -1,0 +1,118 @@
+
+
+
+*{box-sizing:border-box}
+:root{--bg:#0f172a;--card:#111827;--muted:#9ca3af;--text:#e5e7eb;--accent:#60a5fa;--accent-2:#22d3ee}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+a{color:inherit;text-decoration:none}
+img{width:100%;display:block;object-fit:cover}
+.container{max-width:1100px;margin:0 auto;padding:16px}
+.nav{position:sticky;top:0;background:rgba(15,23,42,.85);backdrop-filter:blur(8px);border-bottom:1px solid #1f2937;z-index:10}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;font-size:20px;letter-spacing:.5px}
+.nav a{margin:0 8px;color:var(--text)}
+.nav .btn{background:var(--accent);padding:8px 14px;border-radius:12px;color:#0b1325}
+.btn{background:var(--accent);border:none;border-radius:12px;padding:10px 16px;font-weight:600;cursor:pointer;display:inline-block}
+.btn.outline{background:transparent;border:1px solid var(--accent);color:var(--text)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;margin-top:16px}
+.hero-text h1{font-size:44px;margin:0 0 8px}
+.hero-text p{color:var(--muted);margin:0 0 16px}
+#homeMap{height:340px;border-radius:16px;overflow:hidden;border:1px solid #1f2937}
+.search-bar{display:flex;gap:8px}
+.search-bar input{flex:1;padding:10px 12px;border-radius:12px;border:1px solid #1f2937;background:#0b1225;color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid #1f2937;border-radius:16px;overflow:hidden;transition:transform .15s, border .15s}
+.card:hover{transform:translateY(-2px);border-color:#263341}
+.card-body{padding:12px;color: white;}
+.card-body h3{margin:0 0 6px;font-size:18px}
+.muted{color:var(--muted);font-size:14px}
+.chip-row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.chip{border:1px solid #263341;border-radius:999px;padding:6px 10px;font-size:12px;color:#cbd5e1}
+.flash-wrap{margin:12px 0}
+.flash{padding:12px;border-radius:12px;margin-bottom:8px}
+.flash.success{background:#052e18;color:#c0f4d8;border:1px solid #0a5931}
+.detail-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:start}
+.lead{font-size:18px;color:#d1d5db}
+.inline-list{display:flex;gap:10px;flex-wrap:wrap;padding:0;list-style:none}
+.filters{display:flex;gap:8px;margin-bottom:12px}
+.filters input{padding:10px;border-radius:12px;border:1px solid #1f2937;background:#0b1225;color:var(--text)}
+.form{display:grid;gap:10px;max-width:560px}
+.form input,.form textarea,.form select{width:100%;padding:10px;border-radius:12px;border:1px solid #1f2937;background:#0b1225;color:var(--text)}
+.footer{margin-top:32px;border-top:1px solid #1f2937}
+.center{text-align:center;padding:40px 0}
+.audio{margin-top:10px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .detail-hero{grid-template-columns:1fr}
+}
+
+/* Force dark theme overrides after Bootstrap */
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+a {
+  color: var(--text) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text) !important;
+}
+
+.footer {
+  margin-top: 32px;   /* same as mt-5 */
+  padding: 16px 0;    /* same as py-3 */
+  border-top: 1px solid #1f2937;
+  text-align: center;
+}
+
+.carousel-item img {
+  height: 300px;        /* fixed height for all slides */
+  object-fit: cover;    /* crop image while filling container */
+  width: 100%;          /* full width */
+}
+
+.event-ticker {
+  position: relative;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9); /* nice gradient */
+  color: #fff;
+  font-weight: 600;
+  padding: 2px 16px;
+  overflow: hidden;
+  border-bottom: 4px solid #1e293b;
+  font-size: 15px;
+}
+
+.event-ticker marquee {
+  white-space: nowrap;
+}
+
+.event-ticker::before {
+  content: "📅 Upcoming Events:";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  background: rgba(0,0,0,0.25);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.event-ticker marquee {
+  margin-left: 150px; /* leaves space for 📅 label */
+}
+
+.ticker-link {
+  color: #60a5fa;   /* Accent color */
+  text-decoration: none;
+  font-weight: 600;
+}
+.ticker-link:hover {
+  text-decoration: underline;
+}
+
+
+

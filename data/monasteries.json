@@ -1,0 +1,191 @@
+[
+  {
+    "id": "rumtek-monastery",
+    "name": "Rumtek Monastery",
+    "district": "Gangtok",
+    "founded": "18th century",
+    "lat": 27.3323,
+    "lng": 88.6227,
+    "languages": [
+      "en",
+      "hi",
+      "ne"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/G6FztXrYqzkAq7f17",
+    "image": "/static/assets/images/Rumtek_Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Rumtek Monastery.mp3",
+    "summary": "Seat of the Karma Kagyu lineage, known for its grandeur and sacred relics.",
+    "description": "Rumtek Monastery, also known as the Dharma Chakra Centre, is one of the most significant monasteries in Sikkim. Its architecture reflects traditional Tibetan styles.",
+    "nearby": [
+      "Enchey Monastery",
+      "Lingdum Monastery"
+    ]
+  },
+  {
+    "id": "pemayangtse-monastery",
+    "name": "Pemayangtse Monastery",
+    "district": "Gyalshing",
+    "founded": "17th century",
+    "lat": 27.3014,
+    "lng": 88.234,
+    "languages": [
+      "en",
+      "hi",
+      "ne"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/8J1t1hLECznHmaph9",
+    "image": "/static/assets/images/Pemayangtse_Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Pemayangtse Monastery.mp3",
+    "summary": "One of Sikkim\u2019s oldest monasteries, with exquisite sculptures and murals.",
+    "description": "Pemayangtse is renowned for its ancient heritage and artistic treasures, including the intricately carved Sangtok Palri model.",
+    "nearby": [
+      "Rabdentse Ruins"
+    ]
+  },
+  {
+    "id": "enchey-monastery",
+    "name": "Enchey Monastery",
+    "district": "Gangtok",
+    "founded": "20th century",
+    "lat": 27.3435,
+    "lng": 88.6165,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/iqKGPeZwJTVoZsT36",
+    "image": "/static/assets/images/Enchey Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Enchey Monastery.mp3",
+    "summary": "A serene monastery overlooking Gangtok, associated with the Nyingma order.",
+    "description": "Enchey Monastery means the 'solitary temple'. It is believed to be blessed by Lama Drupthob Karpo, a tantric master known for levitation.",
+    "nearby": [
+      "Rumtek Monastery"
+    ]
+  },
+  {
+    "id": "dubdi-monastery",
+    "name": "Dubdi Monastery",
+    "district": "West Sikkim",
+    "founded": "1701",
+    "lat": 27.3162,
+    "lng": 88.2323,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/UsbLQ3xnvpHV52258",
+    "image": "/static/assets/images/Dubdi Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Dubdi Monastery.mp3",
+    "summary": "The oldest monastery in Sikkim, founded by Lhatsun Namkha Jigme.",
+    "description": "Dubdi Monastery, also called the 'Hermit’s Cell', was established in 1701 after the coronation of the first Chogyal. It is an important part of Sikkim’s Buddhist heritage.",
+    "nearby": [
+      "Yuksom",
+      "Kartok Lake"
+    ]
+  },
+  {
+    "id": "lingdum-monastery",
+    "name": "Lingdum Monastery",
+    "district": "East Sikkim",
+    "founded": "1998",
+    "lat": 27.2865,
+    "lng": 88.7032,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/ugcZpw6EGasKsHxn7",
+    "image": "/static/assets/images/Lingdum Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Lingdum Monastery.mp3",
+    "summary": "A modern monastery known for its grandeur and young monks’ training.",
+    "description": "Lingdum Monastery, also called Ranka Monastery, is a recent but magnificent monastery with golden statues and beautiful murals. It is a popular filming location as well.",
+    "nearby": [
+      "Rumtek Monastery",
+      "Enchey Monastery"
+    ]
+  },
+  {
+    "id": "phensong-monastery",
+    "name": "Phensong Monastery",
+    "district": "North Sikkim",
+    "founded": "18th century",
+    "lat": 27.3912,
+    "lng": 88.6111,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/hhi1s93uRnsK5J8y5",
+    "image": "/static/assets/images/Phensong Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Phensong Monastery.mp3",
+    "summary": "A monastery known for its annual festival with Cham dances.",
+    "description": "Phensong Monastery was built in the 18th century and is famous for its annual festival before Losoong. It sits beautifully on a gentle slope in North Sikkim.",
+    "nearby": [
+      "Phodong Monastery",
+      "Seven Sisters Waterfalls"
+    ]
+  },
+  {
+    "id": "phodong-monastery",
+    "name": "Phodong Monastery",
+    "district": "North Sikkim",
+    "founded": "1740",
+    "lat": 27.4145,
+    "lng": 88.5946,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/V6Yi7g1QeBmNuMRG7",
+    "image": "/static/assets/images/Phodong Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Phodong Monastery.mp3",
+    "summary": "One of the six important monasteries of the Kagyu sect in Sikkim.",
+    "description": "Phodong Monastery was founded in the 18th century and is an important monastery of the Kagyu sect. Its Cham festival draws many visitors every year.",
+    "nearby": [
+      "Phensong Monastery",
+      "Mangan"
+    ]
+  },
+  {
+    "id": "ralang-monastery",
+    "name": "Ralang Monastery",
+    "district": "South Sikkim",
+    "founded": "1995",
+    "lat": 27.2156,
+    "lng": 88.6019,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://maps.app.goo.gl/hW2eGr8yDBYgnfQs6",
+    "image": "/static/assets/images/Ralang Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Ralang Monastery.mp3",
+    "summary": "A modern monastery of the Kagyu order, famous for its architecture.",
+    "description": "Ralang Monastery, near Ravangla, was built in 1995 and is one of the biggest monasteries in Sikkim. It houses many monks and has a grand annual festival.",
+    "nearby": [
+      "Temi Tea Garden",
+      "Borong"
+    ]
+  },
+  {
+    "id": "kathog-monastery",
+    "name": "Kathog Monastery",
+    "district": "Yuksom, West Sikkim",
+    "founded": "1700",
+    "lat": 27.3744,
+    "lng": 88.2148,
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "street_view_url": "https://www.google.com/maps/place/Kartok+Monastery/@27.2406404,88.5875557,3a,75y,63.27h,81.68t/data=!3m7!1e1!3m5!1soai7Ta_mV-kIkOmeBVeusw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.323307392669705%26panoid%3Doai7Ta_mV-kIkOmeBVeusw%26yaw%3D63.2723403468148!7i13312!8i6656!4m10!1m2!2m1!1sKathog+Monastery!3m6!1s0x39e6a7b8024d1677:0xd2b0be6addf3222e!8m2!3d27.2407996!4d88.588005!15sChBLYXRob2cgTW9uYXN0ZXJ5WhIiEGthdGhvZyBtb25hc3RlcnmSAQltb25hc3RlcnmaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTlNNV0p5YVhCUlJSQUKqATgQATIeEAEiGpnN_D-UaaZCHt_IXbGwTfCKhUW0ScLvYiEtMhQQAiIQa2F0aG9nIG1vbmFzdGVyeeABAPoBBAgAEEU!16s%2Fg%2F11f62d70qt?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+    "image": "/static/assets/images/Kathog Monastery.jpg",
+    "audio_guide": "/static/assets/audio/Kathog Monastery.mp3",
+    "summary": "One of the oldest monasteries in Sikkim, built after the consecration of the first Chogyal.",
+    "description": "Kathog Monastery is one of the oldest in Sikkim and is closely associated with the establishment of the Namgyal dynasty. It is located in the historic town of Yuksom.",
+    "nearby": [
+      "Dubdi Monastery",
+      "Norbugang Chorten"
+    ]
+  }
+]

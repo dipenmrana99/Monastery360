@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monastery360 · Sikkim</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="{{ url_for('index') }}" class="brand">Monastery360</a>
+      <nav>
+        <a href="{{ url_for('monastery_list') }}">Monasteries</a>
+        <a href="{{ url_for('events') }}">Cultural Calendar</a>
+        <a href="{{ url_for('archives') }}">Digital Archives</a>
+        <a href="{{ url_for('submit') }}" class="btn">Participate / Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="event-ticker">
+    <a href="{{ url_for('events') }}" class="ticker-link">
+      <marquee behavior="scroll" direction="left" scrollamount="8" id="eventTicker" onmouseover="this.stop();"
+        onmouseout="this.start()">
+        Loading events...
+      </marquee>
+    </a>
+  </div>
+
+
+  <!-- Main Content -->
+  <main class="container my-4">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-wrap">
+      {% for category, message in messages %}
+      <div class="flash {{category}}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>© {{ 2025 }} Monastery360 · Built with free & open tools (Flask, Leaflet, OSM). No paid APIs.</p>
+    </div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  {% block scripts %}{% endblock %}
+
+  <!-- Floating Chat Button + Message -->
+  <div id="chatbot-container">
+    <div id="chatbot-message">Chat with Monk</div>
+    <button id="chatbot-btn">💬</button>
+  </div>
+
+  <!-- Chatbot Widget -->
+  <div id="chatbot-widget">
+    <div class="chatbot-header">
+      <span>Chat with Monk</span>
+      <button id="chatbot-close">✖</button>
+    </div>
+    <iframe src="https://page.botpenguin.com/68adf40aa4eab203ef0b840c/68adf39cd7fe04003c126b3d"
+      allow="microphone"></iframe>
+  </div>
+
+  <style>
+    /* Floating Button Container */
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Floating Button */
+    #chatbot-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    #chatbot-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Floating Message Bubble */
+    #chatbot-message {
+      background: #2563eb;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      max-width: 200px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease;
+      position: relative;
+      cursor: pointer;
+      /* 👈 makes it look clickable */
+    }
+
+    /* Arrow pointing down to icon */
+    #chatbot-message::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px;
+      border-style: solid;
+      border-color: #2563eb transparent transparent transparent;
+    }
+
+    /* Widget Box */
+    #chatbot-widget {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .chatbot-header {
+      background: #2563eb;
+      color: white;
+      padding: 10px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-header button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    #chatbot-widget iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      flex: 1;
+    }
+
+    /* Responsive scaling */
+    @media (max-width: 768px) {
+      #chatbot-widget {
+        width: 90%;
+        height: 70%;
+        right: 5%;
+        bottom: 90px;
+      }
+
+      #chatbot-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+      }
+    }
+  </style>
+
+  <script>
+    const btn = document.getElementById("chatbot-btn");
+    const widget = document.getElementById("chatbot-widget");
+    const closeBtn = document.getElementById("chatbot-close");
+    const msg = document.getElementById("chatbot-message");
+    const container = document.getElementById("chatbot-container");
+
+    // Show floating message after 1s
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        msg.style.opacity = "1";
+        msg.style.transform = "translateY(0)";
+      }, 1000);
+    });
+
+    // Open widget when button OR message is clicked
+    function openChat() {
+      widget.style.display = "flex";
+      container.style.display = "none";
+    }
+
+    btn.addEventListener("click", openChat);
+    msg.addEventListener("click", openChat);
+
+    // Close widget
+    closeBtn.addEventListener("click", () => {
+      widget.style.display = "none";
+      container.style.display = "flex";
+    });
+  </script>
+
+
+
+  <div id="google_translate_element" style="position:fixed; top:1px; right:20px; z-index:1000;"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'en,hi,bn,gu,kn,ml,mr,ne,pa,ta,te,ur' },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

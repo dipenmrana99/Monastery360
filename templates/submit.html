@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Participate / Book a Visit</h1>
+<form method="post" class="form">
+  <label>Name <input required name="name" type="text" placeholder="Your name"></label>
+  <label>Email <input required name="email" type="email" placeholder="you@example.com"></label>
+  <label>Phone <input name="phone" type="tel" placeholder="+91…"></label>
+  <label>Monastery
+    <select name="monastery">
+      <option value="">General Inquiry</option>
+      {% for m in monasteries %}
+      <option value="{{ m.name }}" {% if request.args.get('monastery') == m.name %}selected{% endif %}>{{ m.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Preferred Visit Date <input name="visit_date" type="date"></label>
+  <label>Message <textarea name="message" rows="5" placeholder="Your plans, questions, interests…"></textarea></label>
+  <button class="btn" type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Monasteries</h1>
+<form class="filters" method="get">
+  <input type="text" name="q" placeholder="Search…" value="{{ q }}">
+  <input type="text" name="district" placeholder="District…" value="{{ district }}">
+  <button class="btn" type="submit">Filter</button>
+</form>
+
+<div class="grid">
+  {% for m in monasteries %}
+  <a class="card" href="{{ url_for('monastery_detail', monastery_id=m.id) }}">
+    <img src="{{ m.image }}" alt="{{ m.name }} image">
+    <div class="card-body">
+      <h3>{{ m.name }}</h3>
+      <p>{{ m.summary }}</p>
+      <div class="chip-row">
+        <span class="chip">{{ m.district }}</span>
+        <span class="chip">{{ m.founded }}</span>
+      </div>
+    </div>
+  </a>
+  {% else %}
+  <p>No results. Try clearing filters.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Digital Archives</h1>
+<p>Community-powered gallery of images and documents. Contribute responsibly; credit original sources.</p>
+<div class="grid">
+  {% for a in archives %}
+  <div class="card">
+    <img src="{{ a.url }}" alt="{{ a.title }}">
+    <div class="card-body">
+      <h3>{{ a.title }}</h3>
+      <p class="muted">{{ a.credit }}</p>
+      <p>{{ a.description }}</p>
+    </div>
+  </div>
+  {% else %}
+  <p>No archive items yet. Add images to <code>static/assets/images</code> and metadata to <code>data/archives.json</code>.</p>
+  {% endfor %}
+</div>
+{% endblock %}
